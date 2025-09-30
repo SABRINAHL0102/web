@@ -1,0 +1,323 @@
+/* Paleta de Lujo y Futurista */
+
+:root {
+    --dark-prime: #080808;
+    /* Negro Absoluto (Fondo principal) */
+    --dark-secondary: #1a1a1a;
+    /* Gris Oscuro (Elementos) */
+    --accent-gold: #e6b800;
+    /* Dorado Mate (Acento de lujo) */
+    --white-text: #ffffff;
+    /* Texto blanco puro */
+    --light-text: #e0e0e0;
+    /* Texto gris claro */
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    /* Fondo muy sutil y transparente */
+    /* Tipografía de Alto Impacto */
+    --font-heading: 'Bebas Neue', sans-serif;
+    /* Audaz y gruesa para títulos */
+    --font-body: 'Roboto', sans-serif;
+    /* Limpia y legible para cuerpo */
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--dark-prime) !important;
+    color: var(--white-text);
+    padding-top: 70px;
+    /* Espacio para el navbar fijo */
+    transition: background-color 0.5s;
+}
+
+
+/* --- EFECTO GLASSMORFISMO BASE (VIDRIO ESMERILADO) --- */
+
+.glass-nav,
+.glass-card,
+.glass-table-container {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+/* --- NAV BAR Y LOGO --- */
+
+#mainNav {
+    /* Ya usa glass-nav */
+}
+
+.navbar-brand {
+    font-family: var(--font-heading);
+    letter-spacing: 2px;
+}
+
+.navbar-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    /* Filtro para que el logo se vea dorado */
+    filter: invert(79%) sepia(35%) saturate(541%) hue-rotate(1deg) brightness(97%) contrast(85%);
+}
+
+.logo-title {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    line-height: 1;
+    color: var(--accent-gold);
+}
+
+.logo-subtitle {
+    font-size: 0.6rem;
+    line-height: 1;
+    color: var(--light-text);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav-link-glam {
+    color: var(--white-text) !important;
+    font-weight: 300;
+}
+
+.nav-link-glam:hover {
+    color: var(--accent-gold) !important;
+}
+
+
+/* Botones con Estilo Futurista */
+
+.btn-futura-outline {
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.4s ease;
+    border-radius: 2px;
+}
+
+.btn-futura-outline:hover {
+    background-color: var(--accent-gold);
+    color: var(--dark-prime);
+    box-shadow: 0 0 20px rgba(230, 184, 0, 0.7);
+}
+
+.btn-futura-solid {
+    background-color: var(--accent-gold);
+    border-color: var(--accent-gold);
+    color: var(--dark-prime);
+    font-weight: 900;
+    letter-spacing: 1px;
+    border-radius: 2px;
+}
+
+.btn-futura-solid:hover {
+    background-color: #cc9c00;
+    border-color: #cc9c00;
+    transform: scale(1.02);
+}
+
+
+/* --- HERO SECTION - MÁXIMO IMPACTO --- */
+
+.hero-section {
+    background: linear-gradient(rgba(8, 8, 8, 0.8), rgba(8, 8, 8, 0.8)), url('https://images.unsplash.com/photo-1542435503-956c469947f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    /* Efecto Parallax */
+    padding: 15rem 0 12rem;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 98%);
+}
+
+.hero-subheading {
+    color: var(--accent-gold);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    letter-spacing: 6px;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 6rem;
+    letter-spacing: 5px;
+    line-height: 0.9;
+    text-shadow: 0 0 15px rgba(230, 184, 0, 0.5);
+}
+
+
+/* Animación de Brillo Pulsante Única para el logo principal */
+
+.hero-logo {
+    width: 120px;
+    height: 120px;
+    filter: invert(79%) sepia(35%) saturate(541%) hue-rotate(1deg) brightness(97%) contrast(85%);
+    box-shadow: 0 0 20px rgba(230, 184, 0, 0.7);
+    border-radius: 50%;
+}
+
+.pulse-logo {
+    animation: glow-pulse 3s infinite alternate;
+}
+
+@keyframes glow-pulse {
+    0% {
+        box-shadow: 0 0 10px rgba(230, 184, 0, 0.5), 0 0 20px rgba(230, 184, 0, 0.2);
+        transform: scale(1);
+    }
+    100% {
+        box-shadow: 0 0 25px rgba(230, 184, 0, 1), 0 0 40px rgba(230, 184, 0, 0.5);
+        transform: scale(1.05);
+    }
+}
+
+
+/* Animación de Pulso para Botones */
+
+.pulse-btn {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(230, 184, 0, 0.3);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(230, 184, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(230, 184, 0, 0);
+    }
+}
+
+
+/* --- SERVICIOS/GLASS CARDS --- */
+
+.subtitle {
+    color: var(--accent-gold);
+    letter-spacing: 5px;
+}
+
+.service-icon {
+    filter: invert(79%) sepia(35%) saturate(541%) hue-rotate(1deg) brightness(97%) contrast(85%);
+    width: 80px;
+    height: 80px;
+    transition: transform 0.4s ease;
+}
+
+.service-card {
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.glass-card {
+    border-radius: 10px;
+    min-height: 250px;
+}
+
+.luxury-divider {
+    height: 3px;
+    background-color: var(--accent-gold);
+    box-shadow: 0 0 15px rgba(230, 184, 0, 0.5);
+    margin: 5rem 0;
+}
+
+
+/* --- TABLA DE PRECIOS - VIDRIO ESMERILADO --- */
+
+.glass-table-container {
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid var(--glass-border);
+}
+
+.price-table-glam {
+    margin-bottom: 0 !important;
+    background: transparent !important;
+}
+
+.bg-accent-gold-head {
+    background-color: var(--accent-gold) !important;
+    border-radius: 10px 10px 0 0;
+}
+
+.price-table-glam .table-category {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border-top: 2px solid var(--accent-gold);
+    border-bottom: 2px solid var(--dark-secondary);
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.text-accent {
+    color: var(--accent-gold) !important;
+}
+
+.price-table-glam tbody td {
+    border-color: #2c2c2c;
+    color: var(--light-text);
+}
+
+.price-table-glam tbody td:nth-child(2) {
+    font-weight: 400;
+    font-family: var(--font-body);
+    width: 60%;
+}
+
+.price-table-glam thead th:nth-child(3) {
+    width: 20%;
+}
+
+
+/* Efecto Hover Único: Borde lateral dorado */
+
+.price-table-glam.table-hover tbody tr:hover:not(.table-category) {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    box-shadow: inset 5px 0 0 0 var(--accent-gold);
+    /* Borde lateral dorado */
+    transform: translateX(5px);
+    transition: all 0.2s ease-out;
+}
+
+
+/* --- CONTACTO / CALL TO ACTION (CTA) --- */
+
+.call-to-action {
+    background-color: var(--accent-gold);
+    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+    padding-top: 10rem !important;
+    color: var(--dark-prime);
+}
+
+.btn-futura-outline-dark {
+    border-color: var(--dark-prime);
+    color: var(--dark-prime);
+    font-weight: 900;
+}
+
+.btn-futura-outline-dark:hover {
+    background-color: var(--dark-prime);
+    color: var(--accent-gold);
+}
+
+
+/* --- FOOTER --- */
+
+.footer {
+    background-color: var(--dark-prime);
+    border-top: 1px solid #333;
+}
+
+.footer-logo {
+    width: 40px;
+    height: 40px;
+    filter: invert(79%) sepia(35%) saturate(541%) hue-rotate(1deg) brightness(97%) contrast(85%);
+    opacity: 0.7;
+}
