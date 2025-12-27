@@ -1,0 +1,55 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Project {
+  id              String   @id @default(cuid())
+  title           String
+  style           String
+  targetDuration  Int
+  aspectRatio     String
+  fps             Int
+  projectState    Json
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  scenes          Scene[]
+  audio           Audio?
+  versions        Version[]
+}
+
+model Scene {
+  id          String  @id @default(cuid())
+  title       String
+  duration    Int
+  visualPrompt String?
+  shotType    String?
+  cameraMotion String?
+  transitionIn String?
+  transitionOut String?
+  assets       String?
+  project      Project @relation(fields: [projectId], references: [id])
+  projectId    String
+  index        Int
+}
+
+model Audio {
+  id          String  @id @default(cuid())
+  musicPrompt String?
+  sfx         String?
+  voiceover   String?
+  project     Project @relation(fields: [projectId], references: [id])
+  projectId   String  @unique
+}
+
+model Version {
+  id        String   @id @default(cuid())
+  project   Project  @relation(fields: [projectId], references: [id])
+  projectId String
+  snapshot  Json
+  createdAt DateTime @default(now())
+}
